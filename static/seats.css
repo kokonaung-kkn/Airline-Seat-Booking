@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main{
+    display: flex;
+}
+
+div.main{
+    width: 70%;
+}
+
+div.basket{
+    width: 30%;
+}
+
+div.main .head{
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    background-color: #0a192f;
+    color: #00ffad;
+    margin-bottom: 20px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+div.main .head .title,
+div.main .head .skip-btn{
+    width: 40%;
+}
+
+.skip-btn {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.skip-btn #continue{
+    display: none;
+}
+
+div.main .head .title p{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+div.main .head .title span{
+    color: #57ffd5;
+}
+
+button{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: #00ffad;
+    color: #0a192f;
+    font-size: 18px;
+    float: right;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover{
+    background-color: #57ffd5;
+}
+
+div.main .body{
+    display: flex;
+    justify-content: space-around;
+}
+
+div.main .body .outbound{
+    width: 40%;
+    height: 400px;
+}
+
+div.main .body .seats .nose,
+div.main .body .seats .tail{
+    width: 300px;
+    height: 80px;
+}
+
+div.main .body .seats .p-body{
+    width: 300px;
+    background-color: black;
+}
+
+div.main .body .seats .nose img,
+div.main .body .seats .tail img{
+    width: 100%;
+    height: 100%;
+}
+
+div.main .body .seats{
+    width: 40%;
+}
+
+div.basket .basketTotal{
+    height: 80px;
+    background-color: #011027;
+    color: #00ffad;
+    padding: 15px;
+}
+
+div.basket .outbound{
+    padding: 15px;
+    background-color: #001433;
+    color: #00ffad;
+}
+
+div.basket .return{
+    padding: 15px;
+    background-color: #011027;
+    color: #00ffad;
+}
+
+div.basket .basketTotal p{
+    font-size: 22px;
+    margin-bottom: 0px;
+}
+
+div.basket .basketTotal a{
+    color: #57ffd5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.p-breakdown{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.basket .skip-btn{
+    height: 80px;
+    background-color: #001433;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.basket .skip-btn a, .skip-btn a{
+    color: #00ffad;
+    cursor: pointer;
+}
+
+.basket .skip-btn a:hover, .skip-btn a:hover{
+    color: #57ffd5;
+}
+
+.fares, .bags{
+    display: flex;
+    justify-content: space-between;
+}
+
+.seat_select div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.passenger{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.passenger .adultBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #a1a1a1;
+}
+
+.passenger .adult{
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.passenger .adult::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: #001f4e;
+    transition: all 0.5s ease;
+}
+
+.passenger .adult:hover::before{
+    width: 100%;
+}
+
+.passenger .adult .uil-caret-right{
+    margin-right: 15px;
+    visibility: hidden;
+}
+
+.passenger .adult .uil-user{
+    font-size: 23px;
+}
+
+.passenger .adult span{
+    font-size: 20px;
+}
+
+.passenger .adultBox.active{
+    color: #0a192f;
+}
+
+.passenger .adultBox.active .uil-caret-right{
+    visibility: visible;
+}
+
+.uil-trash-alt{
+    cursor: pointer;
+}
+
+.seat_row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.seat_row span{
+    color: white;
+}
+
+.p-body .price{
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+}
+
+.seat{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+}
+
+.seat.available{
+    background-image: url(/static/images/seat-available.png);
+    cursor: pointer;
+}
+
+.seat.unavailable{
+    background-image: url(/static/images/seat-unavailable.png);
+    cursor: not-allowed;
+}
+
+.seat.available.occupied{
+    background-image: url(/static/images/seat-occupied-by-adult.png);
+}
